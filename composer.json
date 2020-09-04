@@ -1,0 +1,25 @@
+{
+    "name": "maurolacerda-tech/clever-categories",
+    "description": "Módulo de criação de categorias do CMS da cleverweb.com.br",
+    "authors": [
+        {
+            "name": "maurolacerda-tech",
+            "email": "contato@maurolacerda.com.br"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Categories\\": "./"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Categories\\Providers\\CategoryServiceProvider"
+            ]
+        }
+    }
+}
