@@ -88,7 +88,7 @@ class CategoriesController extends Controller
         $combine_filds = $this->combine_filds;
 
         $option_void = ['' => 'Selecione' ];
-        $categories_list = $option_void+$category->combo_all();
+        $categories_list = $option_void+$category->combo_all('', $menu_id);
 
         return view('Category::create', compact('menu_id', 'menu_icon', 'menu_name', 'slug', 'combine_filds', 'categories_list'));
     }
@@ -119,7 +119,7 @@ class CategoriesController extends Controller
 
         $categoryModel = new Category;
         $option_void = ['' => 'Selecione' ];
-        $categories_list = $option_void+$categoryModel->combo_all();
+        $categories_list = $option_void+$categoryModel->combo_all('', $menu_id);
 
         return view('Category::edit', compact('category', 'languages', 'menu_id', 'menu_icon', 'menu_name', 'slug', 'combine_filds', 'categories_list'));
     }

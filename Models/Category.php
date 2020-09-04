@@ -43,12 +43,12 @@ class Category extends Model
             return $this->hasMany(self::class, 'parent_id', 'id')->orderBy('order', 'asc')->get();
     }
 
-    public function combo_all($in='')
+    public function combo_all($in='', $menu_id)
     {
         if(!empty($in))
-            $categories = $this->whereNull('parent_id')->whereIn('id', explode(',',$in))->get();
+            $categories = $this->whereNull('parent_id')->whereIn('id', explode(',',$in))->where('menu_id', $menu_id)->get();
         else
-            $categories = $this->whereNull('parent_id')->get();
+            $categories = $this->whereNull('parent_id')->where('menu_id', $menu_id)->get();
 
         $pai = [];
         foreach($categories as $category){
