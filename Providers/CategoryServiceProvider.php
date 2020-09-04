@@ -5,7 +5,7 @@ namespace Modules\Categories\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
-class CategoryServiceProvider extends CategoryProvider
+class CategoryServiceProvider extends ServiceProvider
 {
     public function boot()
     {
