@@ -18,6 +18,11 @@ class Category extends Model
         'inactive' => 'Inativo'
     ];
 
+    public function posts()
+    {
+        return $this->belongsToMany(\Modules\Posts\Models\Post::class);
+    }
+
     public function parentId()
     {
         return $this->belongsTo(self::class);
